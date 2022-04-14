@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTyesno</title>
+</head>
+<body>
+<style>
+    button {
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        color: blue;
+        font-weight: bold;
+    }
+</style>
+<th>Do You Love Me</th>
+<br>
+<button id="yes" name="yes" value="yes" style="position: absolute; top:100px;left: 100px" >Yes
+</button>
+<button id="no" name="no" value="no" style="position: absolute; top:100px;left: 180px" onmouseover="m()">No</button>
+</body>
+</html>
+<script>
+    function m() {
+        let x = Math.round(Math.random() * window.innerWidth)
+        let y = Math.round(Math.random() * window.innerHeight)
+        let a=document.getElementById("no").style.left
+        let b=document.getElementById("no").style.top
+        document.getElementById("no").style.left = x + "px"
+        document.getElementById("no").style.top = y + "px"
+    }
+</script>
