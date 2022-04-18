@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>tamgiaccan</title>
 </head>
 <body>
-$END$
+nhập cạnh a:
+<input type="text" name="nhập số" id="a"/>
+<br>
+<br>
+Nhập cạnh b:
+<input type="text" name="nhập số" id="b"/>
+<br><br>
+Nhập cạnh c:
+<input type="text" name="nhập số" id="c"/>
+<br><br>
+<button type="button" onclick="d()">kp</button>
 </body>
 </html>
+<script>
+    function d() {
+        let e = parseInt(document.getElementById("a").value);
+        let f = parseInt(document.getElementById("b").value);
+        let g = parseInt(document.getElementById("c").value);
+        if (e == f && f== g) {
+            document.write(" tam giac can" + "");
+
+        } else {
+            document.write("khong la tam giac khong");
+        }
+    }
+</script>

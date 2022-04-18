@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Bt1.2</title>
 </head>
 <body>
-$END$
+Nhập a:
+<input type="text" name="nhập số" id="a"/>
+<br>
+<br>
+Nhập b:
+<input type="text" name="nhập số" id="b"/>
+<br>
+<button type="button" onclick="c()">kp</button>
 </body>
 </html>
+<script>
+    function c() {
+        let d = parseInt(document.getElementById("a").value);
+        let e = parseInt(document.getElementById("b").value);
+        f= d*d;
+        g= e*e;
+        document.write("a^2" + "=" +" " + f + "     " +"b^2" + "=" +" " + g);
+    }
+</script>

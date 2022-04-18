@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Bt1.3</title>
 </head>
 <body>
-$END$
+nhập số bé a:
+<input type="text" name="nhập số" id="a"/>
+<br>
+<br>
+Nhập số lớn b:
+<input type="text" name="nhập số" id="b"/>
+<br>
+<button type="button" onclick="c()">kp</button>
 </body>
 </html>
+<script>
+    function c() {
+        let d = parseInt(document.getElementById("a").value);
+        let e = parseInt(document.getElementById("b").value);
+        let sum=0;
+        for (i=d; i <= e ; i++){
+            sum +=i;
+        }
+        document.write("tổng:" + " " + sum)
+    }
+</script>
