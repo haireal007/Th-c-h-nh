@@ -23,11 +23,11 @@ Nhập cạnh c:
         let e = parseInt(document.getElementById("a").value);
         let f = parseInt(document.getElementById("b").value);
         let g = parseInt(document.getElementById("c").value);
-        if (e == f && f== g) {
+        let condition = e == f||e == g||g==f;
+        if (condition) {
             document.write(" tam giac can" + "");
-
         } else {
-            document.write("khong la tam giac khong");
+            document.write("khong la tam giac cân");
         }
     }
 </script>
