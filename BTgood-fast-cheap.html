@@ -7,28 +7,31 @@
 <body>
 <form>
     <input name="good" type="checkbox" value="good" id="good"  onclick="g()"/>good
+    <br>
     <input name="fast" type="checkbox" value="fast" id="fast" onclick="f()" />fast
-    <input name="cheap" type="checkbox" value="cheap" id="cheap" onclick="c()" />cheap
+    <br>
+    <input name="cheap" type="checkbox" value="cheap" id="cheap" onclick="k()" />cheap
+    <br>
 </form>
 </body>
 </html>
 <script>
     let a=document.getElementById("good");
-    let b=document.getElementById("cheap");
-    let c=document.getElementById("fast");
+    let b=document.getElementById("fast");
+    let c=document.getElementById("cheap");
     function g(){
             if(b.checked&&c.checked){
-                c.checked=false
+                c.checked=false;
             }
         }
-    function c(){
+    function f(){
         if(a.checked&&c.checked){
-            a.checked=false
+            a.checked=false;
         }
     }
-    function f(){
+    function k(){
         if(a.checked&&b.checked){
-            b.checked=false
+            b.checked=false;
         }
     }
 
