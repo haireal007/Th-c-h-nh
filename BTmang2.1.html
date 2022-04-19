@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Btmang2.1</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+  const chuoi=window.prompt();
+  const mang=chuoi.toString();
+  const mang1=[mang[0]];
+  for (let i = 1; i <mang.length; i++) {
+      if(mang[i-1]%2==0&&mang[i]%2==0){
+          mang1.push('-',mang[i]);
+      }
+      else{
+          mang1.push(mang[i]);
+      }
+  }
+  console.log(mang1.join(''));
+</script>
