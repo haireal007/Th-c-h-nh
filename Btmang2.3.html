@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Btmang2.3</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let text = prompt();
+    let text2 = [];
+    let text3 = 'abcdefghijklmnopqrstuvwxyz';
+    let text4 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    for (i = 0; i < text.length; i++) {
+        if (text3.indexOf(text[i])!== -1) {
+            text2.push(text[i].toUpperCase());
+        } else if (text4.indexOf(text[i]) !== -1) {
+            text2.push(text[i].toLowerCase());
+        } else {
+            text2.push(text[i]);
+        }
+    }
+    console.log(text2.join(''))
+</script>
