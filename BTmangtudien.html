@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bttudien</title>
+</head>
+<body>
+Nhập từ tra cứu:
+<form>
+    <input type="text" value="" id="a"/>
+    <button type="button" onclick="search()">search</button>
+</form>
+</body>
+</html>
+<script>
+    function search() {
+        let El = ['cat', 'dog', 'fish', 'car', 'book', 'hello'];
+        let VS = ['mèo', 'chó', 'cá', 'ô tô', 'sách', 'xin chao'];
+        let b = document.getElementById('a').value;
+        for (let i = 0; i < El.length; i++) {
+            if (El[i] == b) {
+                console.log(El[i] + " " + 'là:' + ' ' + VS[i]);
+                break;
+            } else {
+                console.log("không có từ cần tìm kiếm");
+            }
+        }
+    }
+</script>
