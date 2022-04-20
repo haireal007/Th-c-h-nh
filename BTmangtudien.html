@@ -13,17 +13,26 @@ Nhập từ tra cứu:
 </body>
 </html>
 <script>
+    let El = ['cat', 'dog', 'fish', 'car', 'book', 'hello'];
+    let VS = ['mèo', 'chó', 'cá', 'ô tô', 'sách', 'xin chao'];
+
     function search() {
-        let El = ['cat', 'dog', 'fish', 'car', 'book', 'hello'];
-        let VS = ['mèo', 'chó', 'cá', 'ô tô', 'sách', 'xin chao'];
         let b = document.getElementById('a').value;
+        if (kiemtratuCotrongTudienkhong(b)) {
+            alert(b + " " + "là" + " " + VS[El.indexOf(b)]);
+
+        } else {
+            alert("k có DL tìm kiếm");
+        }
+
+    }
+
+    function kiemtratuCotrongTudienkhong(a) {
         for (let i = 0; i < El.length; i++) {
-            if (El[i] == b) {
-                console.log(El[i] + " " + 'là:' + ' ' + VS[i]);
-                break;
-            } else {
-                console.log("không có từ cần tìm kiếm");
+            if (a == El[i]) {
+                return true
             }
         }
+        return false
     }
 </script>
