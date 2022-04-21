@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THhammin</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    function Findmin(mang){
+        let min=mang[0];
+        for (let i = 0; i < mang.length; i++) {
+            if(mang[i]<min){
+                min=mang[i];
+            }
+        }
+        return min;
+    }
+    let mang1=[2,4,,6,7,2,77,334];
+    let mang2=[3,45,65778,2323,6457,1,123123,756,7,42,4,23,342,0];
+    let mang3=[5,2,6,8,3,554,5];
+    let mang4=[2131,435,3123,6567,1,2];
+    let a=[mang1,mang2,mang3,mang4]
+    for (let j = 0; j <4; j++) {
+        let min= Findmin(a[j]);
+       console.log(min);
+    }
+
+</script>
