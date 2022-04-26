@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HinhTron</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    class circle {
+        radius;
+        color;
+
+        constructor(radius, color) {
+            this.radius = radius;
+            this.color = color;
+        }
+
+        getradius() {
+            return this.radius;
+        }
+
+        getarea() {
+            return Math.PI * this.radius * this.radius;
+        }
+    }
+
+    let circle1 = new circle(2);
+    let radius = circle1.getradius();
+    let area = circle1.getarea();
+    alert("radius:" + radius + ",area:" + area);
+</script>
