@@ -42,7 +42,15 @@
         setyear(year) {
             this.year = year;
         }
+        setdate(day,month,year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        toString(){
+            return this.day + '/'+ this.month+ '/'+ this.year;         }
     }
+
 
     let hai = new date(10, 10, 1995);
     hai.setday(8);
@@ -51,6 +59,5 @@
     let day = hai.getday();
     let month = hai.getmonth();
     let year = hai.getyear();
-    alert(day + "/" + month + "/" + year);
-
+    alert(hai.toString());
 </script>
