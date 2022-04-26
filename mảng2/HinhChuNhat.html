@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HinhChuNhat</title>
+</head>
+<body>
+<div>
+    <input id="widths" type="text" placeholder="chiều dài HCN">
+    <input id="heights" type="text" placeholder=" chiều cao HCN">
+    <button id="ARC" onclick="arcs()">ARC</button>
+</div>
+<canvas id="HCN" width="1000px" height="1000px" style="border: 1px solid #a3a3a3">
+</canvas>
+</body>
+</html>
+<script>
+    class Rectangle {
+        widths;
+        heights;
+
+        constructor(widths, heights) {
+            this.heights = heights;
+            this.widths = widths;
+        }
+
+        acreage() {
+            return this.acreage = this.widths * this.heights
+        }
+
+        perimeter() {
+            return this.perimeter = 2 * (parseInt(this.heights) + parseInt(this.widths));
+        }
+    }
+
+    function arcs() {
+        var ctx = document.getElementById('HCN').getContext('2d');
+        ctx.clearRect(0, 0, 1000, 1000);
+        var widths = document.getElementById("widths").value;
+        var heights = document.getElementById("heights").value;
+        var rectangle = new Rectangle(widths, heights);
+        if (widths > heights) {
+            ctx.fillRect(200, 200, rectangle.widths, rectangle.heights);
+            ctx.font = "20px Arial";
+            ctx.fillText("Chiều dài HCN:" + rectangle.widths, 20, 20);
+            ctx.fillText("Chiều cao HCN:" + rectangle.heights, 20, 40);
+            ctx.fillText("Diện tích HCN:" + rectangle.acreage(), 20, 60);
+            ctx.fillText("Chu vi HCN:" + rectangle.perimeter(), 20, 80);
+            ctx.stroke();
+        } else {
+            ctx.fillRect(200, 200, rectangle.widths, rectangle.heights);
+            ctx.font = "20px Arial";
+            ctx.fillText("Chiều dài HCN:" + rectangle.heights, 20, 20);
+            ctx.fillText("Chiều cao HCN:" + rectangle.widths, 20, 40);
+            ctx.fillText("Diện tích HCN:" + rectangle.acreage(), 20, 60);
+            ctx.fillText("Chu vi HCN:" + rectangle.perimeter(), 20, 80);
+            ctx.stroke();
+        }
+        document.getElementById('widths').value = '';
+        document.getElementById('heights').value = '';
+    }
+</script>
