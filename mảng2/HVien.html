@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hvien</title>
+    <style>
+        #name {
+            color: blue;
+        }
+
+        #age {
+            color: blueviolet;
+        }
+
+        #gender {
+            color: chartreuse;
+        }
+
+        #phone {
+            color: darkred;
+        }
+
+        #email {
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1 style="color: darkred">Học Viên</h1>
+    <input placeholder="name HV " id="name">
+    <input placeholder="age" id="age">
+    <input placeholder="gender" id="gender">
+    <input placeholder="phone" id="phone">
+    <input placeholder="email" id="email">
+    <button onclick="create()">Add Product</button>
+    <button onclick="saveEdit()">Edit Product</button>
+    <br>
+    <br>
+    <table border="1" id="display" style="width: 50%; text-align: center">
+        <tr>
+            <td>STT</td>
+            <td>NAME</td>
+            <td>AGE</td>
+            <td>GENDER</td>
+            <td>PHONE</td>
+            <td>EMAIL</td>
+            <td>EDIT</td>
+            <td>DELETE</td>
+        </tr>
+    </table>
+</div>
+</div>
+</body>
+</html>
+<script>
+    class HV {
+        name;
+        age;
+        gender;
+        phone;
+        email;
+
+        constructor(name, age, gender, phone, email) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.phone = phone;
+            this.email = email;
+        }
+    }
+
+    let HVCG = [new HV("Mai Thanh Hải", "28", "Nam", "0359800809", "hairealmta1234@gmail.com")];
+
+    function create() {
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let gender = document.getElementById('gender').value;
+        let phone = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
+        HVCG.push(new HV(name, age, gender, phone, email));
+        show();
+    }
+
+    function show() {
+        let str = "";
+        str += "<tr><td>STT</td><td>NAME</td><td>AGE</td><td>GENDER</td><td>PHONE</td><td>EMAIL</td><td>EDIT</td><td>DELETE</td></tr>"
+        for (let i = 0; i < HVCG.length; i++) {
+            str += "<tr>"
+            str += `<td>${i + 1}</td>`
+            str += `<td style="color: blue">${HVCG[i].name}</td>`
+            str += `<td style="color: blueviolet">${HVCG[i].age}</td>`
+            str += `<td style="color: chartreuse">${HVCG[i].gender}</td>`
+            str += `<td style="color: darkorange">${HVCG[i].phone}</td>`
+            str += `<td style="color: forestgreen">${HVCG[i].email}</td>`
+            str += `<td style="background: red"><button style="background: chartreuse" onclick="showEdit(${i})">Edit</button></td>`
+            str += `<td style="background: forestgreen"><button style="background: blue" onclick="deleteP(${i})">Delete</button></td>`
+            str += "</tr>"
+        }
+        document.getElementById("display").innerHTML = str;
+    }
+
+    let indexEdit = -1;
+
+    function showEdit(index) {
+        document.getElementById('name').value = HVCG[index].name;
+        document.getElementById('age').value = HVCG[index].age;
+        document.getElementById('gender').value = HVCG[index].gender;
+        document.getElementById('phone').value = HVCG[index].phone;
+        document.getElementById('email').value = HVCG[index].email;
+        index;
+    }
+
+    function saveEdit() {
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let gender = document.getElementById('gender').value;
+        let phone = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
+        HVCG[indexEdit] = new HV(name, age, gender, phone, email);
+        show();
+        indexEdit = -1;
+    }
+
+    function deleteP(index) {
+        HVCG.splice(index, 1);
+        show();
+    }
+
+    show();
+</script>

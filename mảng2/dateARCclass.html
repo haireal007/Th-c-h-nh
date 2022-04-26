@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dateARCclass</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    class date {
+        day;
+        month;
+        year;
+
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        getday(day) {
+            return this.day;
+        }
+
+        getmonth(month) {
+            return this.month;
+        }
+
+        getyear(year) {
+            return this.year;
+        }
+
+        setday(day) {
+            this.day = day;
+        }
+
+        setmonth(month) {
+            this.month = month;
+        }
+
+        setyear(year) {
+            this.year = year;
+        }
+    }
+
+    let hai = new date(10, 10, 1995);
+    hai.setday(8);
+    hai.setmonth(9);
+    hai.setyear(1995);
+    let day = hai.getday();
+    let month = hai.getmonth();
+    let year = hai.getyear();
+    alert(day + "/" + month + "/" + year);
+
+</script>
