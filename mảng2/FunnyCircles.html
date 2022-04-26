@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FunnyCircles</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+</canvas>
+</body>
+</html>
+<script>
+    class circle {
+        x;
+        y;
+        bk;
+
+        constructor(x, y, bk) {
+            this.x = x;
+            this.y = y;
+            this.bk = bk;
+        }
+    }
+
+    //tạo đường tròn cố định
+    function createCircle() {
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var circle1 = new circle(500, 500, 80);
+        ctx.beginPath();
+        ctx.arc(circle1.x, circle1.y, circle1.bk, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+    createCircle();
+
+    // tạo đường tròn ngẫu nhiên màu ngẫu nhiên
+    function getRandomHex() {
+        return Math.floor(Math.random() * 225)
+    }
+
+    function getRandomColor() {
+        var red = getRandomHex();
+        var green = getRandomHex();
+        var blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green + ")";
+    }
+
+    function createCircle1() {
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var bk = Math.floor(Math.random() * 100);
+        var color = getRandomColor();
+        var circle1 = new circle(700, 400, bk);
+        ctx.beginPath();
+        ctx.arc(circle1.x, circle1.y, circle1.bk, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+
+    createCircle1();
+</script>
