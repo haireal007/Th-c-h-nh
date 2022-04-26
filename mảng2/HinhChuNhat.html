@@ -46,6 +46,7 @@
             ctx.fillText("Chiều cao HCN:" + rectangle.heights, 20, 40);
             ctx.fillText("Diện tích HCN:" + rectangle.acreage(), 20, 60);
             ctx.fillText("Chu vi HCN:" + rectangle.perimeter(), 20, 80);
+            ctx.fillText("Ta có HCN:", 20, 120);
             ctx.stroke();
         } else {
             ctx.fillRect(200, 200, rectangle.widths, rectangle.heights);
@@ -54,6 +55,7 @@
             ctx.fillText("Chiều cao HCN:" + rectangle.widths, 20, 40);
             ctx.fillText("Diện tích HCN:" + rectangle.acreage(), 20, 60);
             ctx.fillText("Chu vi HCN:" + rectangle.perimeter(), 20, 80);
+            ctx.fillText("Ta có HCN:", 20, 120);
             ctx.stroke();
         }
         document.getElementById('widths').value = '';

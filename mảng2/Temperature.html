@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    class Temperature {
+        C;
+
+        constructor(c) {
+            this.C = c;
+        }
+
+        F(c) {
+            return this.F = 9 * (this.C) / 5 + 32;
+        }
+
+        kevin(c) {
+            return this.kevin = this.C + 273.15;
+        }
+    }
+    let c = new Temperature(25);
+   alert("độ F là:" + " " + c.F() + "," + "độ kenvin là:"+ " " + c.kevin())
+</script>
