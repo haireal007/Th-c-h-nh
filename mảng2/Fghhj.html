@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<cavas id="canvas" width="530" height="710" >
+</cavas>
+</body>
+</html>
+<script>
+    var canvas = document.getElementById('gamezone');
+    var ctx= canvas.getContext('2d');
+    // background;
+    let background = new Image();
+    background.src =  "https://raw.githubusercontent.com/simplecodecodesimple/Flappy-Bird/master/nenchinh.png";
+    let bg = {
+        CX: 0,
+        CY: 0,
+        CW: 530,
+        CH: 710,
+        draw: function () {
+            ctx.beginPath();
+            ctx.drawImage(background, this.CX, this.CY);
+        }
+    }
+
+    function draw() {
+        bg.draw();
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, cavas.width, cavas.height);
+        draw();}
+    animate();
+</script>
