@@ -5,12 +5,13 @@
     <title>Flappy-Bird</title>
 </head>
 <body>
-<canvas id="gamezone" width="900" height="500"></canvas>
+<canvas id="game" width="900" height="500"></canvas>
 <p id="score">score: 0</p>
 </body>
 </html>
 <script>
-    var canvas = document.getElementById('gamezone');
+    let time = 30;
+    var canvas = document.getElementById('game');
     var context = canvas.getContext('2d');
     var scoreshow = document.getElementById('score');
     var birdimg = new Image();
@@ -44,8 +45,6 @@
             khoangcachdenongduoi = ongtren.height + khoangcachhaiong;
             context.drawImage(ongtren, ong[i].x, ong[i].y);
             context.drawImage(ongduoi, ong[i].x, ong[i].y + khoangcachdenongduoi);
-
-
             ong[i].x -= 5;
 
 
@@ -57,10 +56,13 @@
 
                 })
             }
-            if (ong[i].x == 0) ong.splice(0, 1);
+            if (ong[i].x == -50) ong.splice(0, 1);
 
 
-            if (ong[i].x == bird.x) score++;
+            if (ong[i].x == bird.x){
+                score++;
+                time--;
+            }
 
             if (bird.y + birdimg.height == canvas.height ||
                 bird.x + birdimg.width >= ong[i].x && bird.x <= ong[i].x + ongtren.width
@@ -71,12 +73,11 @@
             }
         }
         scoreshow.innerHTML = "score: " + score;
-
         bird.y += 3;
-        requestAnimationFrame(run);
+        setTimeout(() => run(), time);
     }
     document.addEventListener("keydown", function () {
-        bird.y -= 60;
+        bird.y -= 50;
     })
     run();
 </script>
